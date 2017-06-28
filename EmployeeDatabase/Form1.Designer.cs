@@ -36,6 +36,7 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(52, 88);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(133, 69);
+            this.btnAdd.Size = new System.Drawing.Size(130, 65);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add New Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -63,7 +64,7 @@
             // 
             this.btnView.Location = new System.Drawing.Point(52, 173);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(133, 69);
+            this.btnView.Size = new System.Drawing.Size(130, 65);
             this.btnView.TabIndex = 2;
             this.btnView.Text = "View Database";
             this.btnView.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
             // 
             this.btnSearch.Location = new System.Drawing.Point(52, 258);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(133, 69);
+            this.btnSearch.Size = new System.Drawing.Size(130, 65);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search for an Employee";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -83,7 +84,7 @@
             // 
             this.btnSettings.Location = new System.Drawing.Point(52, 343);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(133, 69);
+            this.btnSettings.Size = new System.Drawing.Size(130, 65);
             this.btnSettings.TabIndex = 4;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@
             // 
             this.btnAbout.Location = new System.Drawing.Point(52, 428);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(133, 69);
+            this.btnAbout.Size = new System.Drawing.Size(130, 65);
             this.btnAbout.TabIndex = 5;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -110,11 +111,22 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(486, 533);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(124, 59);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 620);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnSettings);
@@ -141,6 +153,7 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

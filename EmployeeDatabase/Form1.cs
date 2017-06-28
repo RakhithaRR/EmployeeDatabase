@@ -12,6 +12,8 @@ namespace EmployeeDatabase
 {
     public partial class MainForm : Form
     {
+        Form addNew = new AddEmployee();
+        Form aboutNew = new AboutBox();
         public MainForm()
         {
             InitializeComponent();
@@ -22,34 +24,19 @@ namespace EmployeeDatabase
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            addNew.Show();
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            aboutNew.Show();
         }
     }
 }

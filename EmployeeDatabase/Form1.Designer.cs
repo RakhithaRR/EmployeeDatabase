@@ -58,7 +58,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add New Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnView
             // 
@@ -68,7 +68,6 @@
             this.btnView.TabIndex = 2;
             this.btnView.Text = "View Database";
             this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSearch
             // 
@@ -78,7 +77,6 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search for an Employee";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnSettings
             // 
@@ -88,7 +86,6 @@
             this.btnSettings.TabIndex = 4;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnAbout
             // 
@@ -98,7 +95,7 @@
             this.btnAbout.TabIndex = 5;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.button5_Click);
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // pictureBox1
             // 

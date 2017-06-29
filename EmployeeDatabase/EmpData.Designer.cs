@@ -301,6 +301,10 @@ namespace EmployeeDatabase {
             
             private global::System.Data.DataColumn columnHire_Date;
             
+            private global::System.Data.DataColumn columnResident_Telephone;
+            
+            private global::System.Data.DataColumn columnMobile_Number;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public employeedataDataTable() {
@@ -424,6 +428,22 @@ namespace EmployeeDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Resident_TelephoneColumn {
+                get {
+                    return this.columnResident_Telephone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Mobile_NumberColumn {
+                get {
+                    return this.columnMobile_Number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +479,7 @@ namespace EmployeeDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public employeedataRow AddemployeedataRow(string Full_Name, string First_Name, string Last_Name, string Address, System.DateTime Date_of_Birth, string Department, string Position, string Gender, string Email, System.DateTime Hire_Date) {
+            public employeedataRow AddemployeedataRow(string Full_Name, string First_Name, string Last_Name, string Address, System.DateTime Date_of_Birth, string Department, string Position, string Gender, string Email, System.DateTime Hire_Date, int Resident_Telephone, int Mobile_Number) {
                 employeedataRow rowemployeedataRow = ((employeedataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,7 +492,9 @@ namespace EmployeeDatabase {
                         Position,
                         Gender,
                         Email,
-                        Hire_Date};
+                        Hire_Date,
+                        Resident_Telephone,
+                        Mobile_Number};
                 rowemployeedataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemployeedataRow);
                 return rowemployeedataRow;
@@ -513,6 +535,8 @@ namespace EmployeeDatabase {
                 this.columnGender = base.Columns["Gender"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnHire_Date = base.Columns["Hire Date"];
+                this.columnResident_Telephone = base.Columns["Resident Telephone"];
+                this.columnMobile_Number = base.Columns["Mobile Number"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +564,10 @@ namespace EmployeeDatabase {
                 base.Columns.Add(this.columnEmail);
                 this.columnHire_Date = new global::System.Data.DataColumn("Hire Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHire_Date);
+                this.columnResident_Telephone = new global::System.Data.DataColumn("Resident Telephone", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnResident_Telephone);
+                this.columnMobile_Number = new global::System.Data.DataColumn("Mobile Number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMobile_Number);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -848,6 +876,38 @@ namespace EmployeeDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Resident_Telephone {
+                get {
+                    try {
+                        return ((int)(this[this.tableemployeedata.Resident_TelephoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Resident Telephone\' in table \'employeedata\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemployeedata.Resident_TelephoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Mobile_Number {
+                get {
+                    try {
+                        return ((int)(this[this.tableemployeedata.Mobile_NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mobile Number\' in table \'employeedata\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemployeedata.Mobile_NumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAddressNull() {
                 return this.IsNull(this.tableemployeedata.AddressColumn);
             }
@@ -904,6 +964,30 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEmailNull() {
                 this[this.tableemployeedata.EmailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResident_TelephoneNull() {
+                return this.IsNull(this.tableemployeedata.Resident_TelephoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResident_TelephoneNull() {
+                this[this.tableemployeedata.Resident_TelephoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMobile_NumberNull() {
+                return this.IsNull(this.tableemployeedata.Mobile_NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMobile_NumberNull() {
+                this[this.tableemployeedata.Mobile_NumberColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1077,10 +1161,12 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             tableMapping.ColumnMappings.Add("Gender", "Gender");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Hire Date", "Hire Date");
+            tableMapping.ColumnMappings.Add("Resident Telephone", "Resident Telephone");
+            tableMapping.ColumnMappings.Add("Mobile Number", "Mobile Number");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `employeedata` WHERE ((`ID` = @p1) AND (`Full Name` = @p2) AND (`First Name` = @p3) AND (`Last Name` = @p4) AND ((@p5 = 1 AND `Address` IS NULL) OR (`Address` = @p6)) AND ((@p7 = 1 AND `Date of Birth` IS NULL) OR (`Date of Birth` = @p8)) AND ((@p9 = 1 AND `Department` IS NULL) OR (`Department` = @p10)) AND ((@p11 = 1 AND `Position` IS NULL) OR (`Position` = @p12)) AND (`Gender` = @p13) AND ((@p14 = 1 AND `Email` IS NULL) OR (`Email` = @p15)) AND (`Hire Date` = @p16))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `employeedata` WHERE ((`ID` = @p1) AND (`Full Name` = @p2) AND (`First Name` = @p3) AND (`Last Name` = @p4) AND ((@p5 = 1 AND `Address` IS NULL) OR (`Address` = @p6)) AND ((@p7 = 1 AND `Date of Birth` IS NULL) OR (`Date of Birth` = @p8)) AND ((@p9 = 1 AND `Department` IS NULL) OR (`Department` = @p10)) AND ((@p11 = 1 AND `Position` IS NULL) OR (`Position` = @p12)) AND (`Gender` = @p13) AND ((@p14 = 1 AND `Email` IS NULL) OR (`Email` = @p15)) AND (`Hire Date` = @p16) AND ((@p17 = 1 AND `Resident Telephone` IS NULL) OR (`Resident Telephone` = @p18)) AND ((@p19 = 1 AND `Mobile Number` IS NULL) OR (`Mobile Number` = @p20)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1215,11 +1301,43 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.SourceColumn = "Hire Date";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p17";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Resident Telephone";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p18";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Resident Telephone";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p19";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Mobile Number";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p20";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Mobile Number";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `employeedata` (`Full Name`, `First Name`, `Last Name`, `Address`, `D" +
-                "ate of Birth`, `Department`, `Position`, `Gender`, `Email`, `Hire Date`) VALUES " +
-                "(@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `employeedata` (`Full Name`, `First Name`, `Last Name`, `Address`, `Date of Birth`, `Department`, `Position`, `Gender`, `Email`, `Hire Date`, `Resident Telephone`, `Mobile Number`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1291,9 +1409,23 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Hire Date";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Resident Telephone";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Mobile Number";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `employeedata` SET `Full Name` = @p1, `First Name` = @p2, `Last Name` = @p3, `Address` = @p4, `Date of Birth` = @p5, `Department` = @p6, `Position` = @p7, `Gender` = @p8, `Email` = @p9, `Hire Date` = @p10 WHERE ((`ID` = @p11) AND (`Full Name` = @p12) AND (`First Name` = @p13) AND (`Last Name` = @p14) AND ((@p15 = 1 AND `Address` IS NULL) OR (`Address` = @p16)) AND ((@p17 = 1 AND `Date of Birth` IS NULL) OR (`Date of Birth` = @p18)) AND ((@p19 = 1 AND `Department` IS NULL) OR (`Department` = @p20)) AND ((@p21 = 1 AND `Position` IS NULL) OR (`Position` = @p22)) AND (`Gender` = @p23) AND ((@p24 = 1 AND `Email` IS NULL) OR (`Email` = @p25)) AND (`Hire Date` = @p26))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `employeedata` SET `Full Name` = @p1, `First Name` = @p2, `Last Name` = @p3, `Address` = @p4, `Date of Birth` = @p5, `Department` = @p6, `Position` = @p7, `Gender` = @p8, `Email` = @p9, `Hire Date` = @p10, `Resident Telephone` = @p11, `Mobile Number` = @p12 WHERE ((`ID` = @p13) AND (`Full Name` = @p14) AND (`First Name` = @p15) AND (`Last Name` = @p16) AND ((@p17 = 1 AND `Address` IS NULL) OR (`Address` = @p18)) AND ((@p19 = 1 AND `Date of Birth` IS NULL) OR (`Date of Birth` = @p20)) AND ((@p21 = 1 AND `Department` IS NULL) OR (`Department` = @p22)) AND ((@p23 = 1 AND `Position` IS NULL) OR (`Position` = @p24)) AND (`Gender` = @p25) AND ((@p26 = 1 AND `Email` IS NULL) OR (`Email` = @p27)) AND (`Hire Date` = @p28) AND ((@p29 = 1 AND `Resident Telephone` IS NULL) OR (`Resident Telephone` = @p30)) AND ((@p31 = 1 AND `Mobile Number` IS NULL) OR (`Mobile Number` = @p32)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1370,23 +1502,21 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "Resident Telephone";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Full Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "Mobile Number";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "First Name";
+            param.SourceColumn = "ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1394,24 +1524,23 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Last Name";
+            param.SourceColumn = "Full Name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Address";
+            param.SourceColumn = "First Name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Address";
+            param.SourceColumn = "Last Name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1419,16 +1548,16 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Date of Birth";
+            param.SourceColumn = "Address";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Date of Birth";
+            param.SourceColumn = "Address";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1436,16 +1565,16 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "Date of Birth";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "Date of Birth";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1453,7 +1582,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Position";
+            param.SourceColumn = "Department";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -1462,11 +1591,28 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Position";
+            param.SourceColumn = "Department";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Position";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p24";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Position";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p25";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
@@ -1474,7 +1620,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p24";
+            param.ParameterName = "@p26";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -1483,7 +1629,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p25";
+            param.ParameterName = "@p27";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -1491,11 +1637,45 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p26";
+            param.ParameterName = "@p28";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Hire Date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p29";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Resident Telephone";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p30";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Resident Telephone";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p31";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Mobile Number";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p32";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Mobile Number";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -1504,7 +1684,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::EmployeeDatabase.Properties.Settings.Default.employeedatabaseConnectionString;
+            this._connection.ConnectionString = global::EmployeeDatabase.Properties.Settings.Default.employeedatabaseConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1514,7 +1694,8 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ID`, `Full Name`, `First Name`, `Last Name`, `Address`, `Date of Birth`, " +
-                "`Department`, `Position`, `Gender`, `Email`, `Hire Date` FROM `employeedata`";
+                "`Department`, `Position`, `Gender`, `Email`, `Hire Date`, `Resident Telephone`, " +
+                "`Mobile Number` FROM `employeedata`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1575,7 +1756,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p2, string p3, string p4, string p6, global::System.Nullable<global::System.DateTime> p8, string p10, string p12, string p13, string p15, System.DateTime p16) {
+        public virtual int Delete(int p1, string p2, string p3, string p4, string p6, global::System.Nullable<global::System.DateTime> p8, string p10, string p12, string p13, string p15, System.DateTime p16, global::System.Nullable<int> p18, global::System.Nullable<int> p20) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
@@ -1642,6 +1823,22 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(p15));
             }
             this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(p16));
+            if ((p18.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(p18.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((p20.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((int)(p20.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1662,7 +1859,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, string p3, string p4, global::System.Nullable<global::System.DateTime> p5, string p6, string p7, string p8, string p9, System.DateTime p10) {
+        public virtual int Insert(string p1, string p2, string p3, string p4, global::System.Nullable<global::System.DateTime> p5, string p6, string p7, string p8, string p9, System.DateTime p10, global::System.Nullable<int> p11, global::System.Nullable<int> p12) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1718,6 +1915,18 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(p9));
             }
             this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(p10));
+            if ((p11.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(p11.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((p12.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(p12.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1749,17 +1958,21 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                     string p8, 
                     string p9, 
                     System.DateTime p10, 
-                    int p11, 
-                    string p12, 
-                    string p13, 
+                    global::System.Nullable<int> p11, 
+                    global::System.Nullable<int> p12, 
+                    int p13, 
                     string p14, 
+                    string p15, 
                     string p16, 
-                    global::System.Nullable<global::System.DateTime> p18, 
-                    string p20, 
+                    string p18, 
+                    global::System.Nullable<global::System.DateTime> p20, 
                     string p22, 
-                    string p23, 
+                    string p24, 
                     string p25, 
-                    System.DateTime p26) {
+                    string p27, 
+                    System.DateTime p28, 
+                    global::System.Nullable<int> p30, 
+                    global::System.Nullable<int> p32) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1815,48 +2028,52 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(p9));
             }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11));
-            if ((p12 == null)) {
-                throw new global::System.ArgumentNullException("p12");
+            if ((p11.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((p13 == null)) {
-                throw new global::System.ArgumentNullException("p13");
+            if ((p12.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(p12.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p13));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
             if ((p14 == null)) {
                 throw new global::System.ArgumentNullException("p14");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
             }
-            if ((p16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            if ((p15 == null)) {
+                throw new global::System.ArgumentNullException("p15");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
+            }
+            if ((p16 == null)) {
+                throw new global::System.ArgumentNullException("p16");
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
             }
-            if ((p18.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(p18.Value));
-            }
-            else {
+            if ((p18 == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((p20 == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(p18));
+            }
+            if ((p20.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(p20.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(p20));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((p22 == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
@@ -1866,21 +2083,45 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(p22));
             }
-            if ((p23 == null)) {
-                throw new global::System.ArgumentNullException("p23");
+            if ((p24 == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p23));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
             }
             if ((p25 == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p25");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(p26));
+            if ((p27 == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(p27));
+            }
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(p28));
+            if ((p30.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(p30.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((p32.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(p32.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

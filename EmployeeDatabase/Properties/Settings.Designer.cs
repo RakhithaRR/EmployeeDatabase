@@ -32,5 +32,25 @@ namespace EmployeeDatabase.Properties {
                 return ((string)(this["employeedatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;database=employeedatabase")]
+        public string employeedatabaseConnectionString1 {
+            get {
+                return ((string)(this["employeedatabaseConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=Rakhitha;database=employeedatabase")]
+        public string employeedatabaseConnectionString2 {
+            get {
+                return ((string)(this["employeedatabaseConnectionString2"]));
+            }
+        }
     }
 }

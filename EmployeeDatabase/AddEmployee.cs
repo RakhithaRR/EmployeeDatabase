@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace EmployeeDatabase
 {
@@ -15,6 +16,14 @@ namespace EmployeeDatabase
         public AddEmployee()
         {
             InitializeComponent();
+        }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'empData.employeedata' table. You can move, or remove it, as needed.
+            this.employeedataTableAdapter.Fill(this.empData.employeedata);
+            
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

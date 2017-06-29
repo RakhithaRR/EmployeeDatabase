@@ -24,11 +24,8 @@ namespace EmployeeDatabase
             // TODO: This line of code loads data into the 'empData.employeedata' table. You can move, or remove it, as needed.
             this.employeedataTableAdapter.Fill(this.empData.employeedata);
             employeedataBindingSource.DataSource = this.empData.employeedata;
-            tbFullname.Focus();
-            this.empData.employeedata.AddemployeedataRow(this.empData.employeedata.NewemployeedataRow());
-            employeedataBindingSource.MoveLast();
+            DefaultFormSettings(false);
             
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,6 +39,7 @@ namespace EmployeeDatabase
             {
                 employeedataBindingSource.EndEdit();
                 employeedataTableAdapter.Update(this.empData.employeedata);
+                DefaultFormSettings(false);
             }
             catch (Exception ex)
             {
@@ -51,13 +49,28 @@ namespace EmployeeDatabase
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            TextBox[] tbs = { tbFullname, tbFname, tbLname, tbPosition, tbResident, tbEmail, tbDept, tbAddress };
             employeedataBindingSource.ResetBindings(false);
-            foreach (TextBox t in tbs)
-            {
-                t.Clear();
-            }
+            DefaultFormSettings(true);
             
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            DefaultFormSettings(true);
+            tbFullname.Focus();
+            this.empData.employeedata.AddemployeedataRow(this.empData.employeedata.NewemployeedataRow());
+            employeedataBindingSource.MoveLast();
+            
+        }
+
+        private void DefaultFormSettings(bool value)
+        {
+            Control[] ctr = { tbFullname, tbFname, tbLname, tbPosition, tbResident, tbEmail, tbDept, tbAddress, cbGender, dtDob, dtHire };
+            foreach (Control c in ctr)
+            {
+                c.ResetText();
+                c.Enabled = value;
+            }
         }
     }
 }

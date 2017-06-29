@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployee));
             this.btnClose = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,19 +58,20 @@
             this.employeedataTableAdapter = new EmployeeDatabase.EmpDataTableAdapters.employeedataTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtHire = new System.Windows.Forms.DateTimePicker();
+            this.dtDob = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeedataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empData)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(724, 652);
+            this.btnClose.Location = new System.Drawing.Point(723, 652);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 46);
+            this.btnClose.Size = new System.Drawing.Size(76, 46);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -300,27 +302,27 @@
             this.tbEmail.Size = new System.Drawing.Size(203, 22);
             this.tbEmail.TabIndex = 26;
             // 
-            // dateTimePicker2
+            // dtHire
             // 
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Hire Date", true));
-            this.dateTimePicker2.Location = new System.Drawing.Point(222, 494);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(203, 22);
-            this.dateTimePicker2.TabIndex = 22;
+            this.dtHire.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Hire Date", true));
+            this.dtHire.Location = new System.Drawing.Point(222, 494);
+            this.dtHire.Name = "dtHire";
+            this.dtHire.Size = new System.Drawing.Size(203, 22);
+            this.dtHire.TabIndex = 22;
             // 
-            // dateTimePicker1
+            // dtDob
             // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Date of Birth", true));
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 299);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 22);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dtDob.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Date of Birth", true));
+            this.dtDob.Location = new System.Drawing.Point(226, 299);
+            this.dtDob.Name = "dtDob";
+            this.dtDob.Size = new System.Drawing.Size(203, 22);
+            this.dtDob.TabIndex = 21;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(635, 652);
+            this.btnCancel.Location = new System.Drawing.Point(632, 652);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 46);
+            this.btnCancel.Size = new System.Drawing.Size(76, 46);
             this.btnCancel.TabIndex = 27;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -328,25 +330,36 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(546, 652);
+            this.btnSave.Location = new System.Drawing.Point(541, 652);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 46);
+            this.btnSave.Size = new System.Drawing.Size(76, 46);
             this.btnSave.TabIndex = 28;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(450, 652);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(76, 46);
+            this.btnNew.TabIndex = 29;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 710);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tbMobile);
             this.Controls.Add(this.cbGender);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtHire);
+            this.Controls.Add(this.dtDob);
             this.Controls.Add(this.tbDept);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbLname);
@@ -370,6 +383,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClose);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployee";
             this.Text = "AddEmployee";
             this.Load += new System.EventHandler(this.AddEmployee_Load);
@@ -410,9 +424,10 @@
         private System.Windows.Forms.TextBox tbMobile;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtHire;
+        private System.Windows.Forms.DateTimePicker dtDob;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnNew;
     }
 }

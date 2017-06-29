@@ -32,17 +32,17 @@ namespace EmployeeDatabase
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addNew.Show();
+            addNew.ShowDialog();
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            aboutNew.Show();
+            aboutNew.ShowDialog();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            viewNew.Show();
+            viewNew.ShowDialog();
         }
     }
 }

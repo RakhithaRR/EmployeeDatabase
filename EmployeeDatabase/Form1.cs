@@ -14,6 +14,7 @@ namespace EmployeeDatabase
     {
         Form addNew = new AddEmployee();
         Form aboutNew = new AboutBox();
+        Form viewNew = new ViewDatabase();
         public MainForm()
         {
             InitializeComponent();
@@ -37,6 +38,11 @@ namespace EmployeeDatabase
         private void btnAbout_Click(object sender, EventArgs e)
         {
             aboutNew.Show();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            viewNew.Show();
         }
     }
 }

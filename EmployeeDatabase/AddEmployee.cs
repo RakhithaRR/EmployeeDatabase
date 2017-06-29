@@ -13,6 +13,7 @@ namespace EmployeeDatabase
 {
     public partial class AddEmployee : Form
     {
+        
         public AddEmployee()
         {
             InitializeComponent();
@@ -22,6 +23,10 @@ namespace EmployeeDatabase
         {
             // TODO: This line of code loads data into the 'empData.employeedata' table. You can move, or remove it, as needed.
             this.employeedataTableAdapter.Fill(this.empData.employeedata);
+            employeedataBindingSource.DataSource = this.empData.employeedata;
+            tbFullname.Focus();
+            this.empData.employeedata.AddemployeedataRow(this.empData.employeedata.NewemployeedataRow());
+            employeedataBindingSource.MoveLast();
             
 
         }
@@ -29,6 +34,30 @@ namespace EmployeeDatabase
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                employeedataBindingSource.EndEdit();
+                employeedataTableAdapter.Update(this.empData.employeedata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            TextBox[] tbs = { tbFullname, tbFname, tbLname, tbPosition, tbResident, tbEmail, tbDept, tbAddress };
+            employeedataBindingSource.ResetBindings(false);
+            foreach (TextBox t in tbs)
+            {
+                t.Clear();
+            }
+            
         }
     }
 }

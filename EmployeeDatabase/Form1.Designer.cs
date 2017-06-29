@@ -68,6 +68,7 @@
             this.btnView.TabIndex = 2;
             this.btnView.Text = "View Database";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnSearch
             // 
@@ -131,6 +132,8 @@
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

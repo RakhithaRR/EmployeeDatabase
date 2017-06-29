@@ -33,7 +33,6 @@
             this.tbId = new System.Windows.Forms.TextBox();
             this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empData = new EmployeeDatabase.EmpData();
-            this.employeedataTableAdapter = new EmployeeDatabase.EmpDataTableAdapters.employeedataTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,19 +52,24 @@
             this.tbLname = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbDept = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.tbMobile = new System.Windows.Forms.TextBox();
+            this.employeedataTableAdapter = new EmployeeDatabase.EmpDataTableAdapters.employeedataTableAdapter();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeedataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empData)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(713, 652);
+            this.btnClose.Location = new System.Drawing.Point(724, 652);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(99, 46);
+            this.btnClose.Size = new System.Drawing.Size(75, 46);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -74,8 +78,9 @@
             // tbId
             // 
             this.tbId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "ID", true));
-            this.tbId.Location = new System.Drawing.Point(226, 39);
+            this.tbId.Location = new System.Drawing.Point(226, 41);
             this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(100, 22);
             this.tbId.TabIndex = 1;
             // 
@@ -89,10 +94,6 @@
             this.empData.DataSetName = "EmpData";
             this.empData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // employeedataTableAdapter
-            // 
-            this.employeedataTableAdapter.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -105,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 111);
+            this.label2.Location = new System.Drawing.Point(70, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 3;
@@ -114,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 178);
+            this.label3.Location = new System.Drawing.Point(70, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 4;
@@ -132,7 +133,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 245);
+            this.label5.Location = new System.Drawing.Point(70, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 6;
@@ -141,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 312);
+            this.label6.Location = new System.Drawing.Point(70, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 17);
             this.label6.TabIndex = 7;
@@ -150,7 +151,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(450, 312);
+            this.label7.Location = new System.Drawing.Point(450, 299);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 8;
@@ -159,7 +160,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(70, 379);
+            this.label8.Location = new System.Drawing.Point(70, 369);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 17);
             this.label8.TabIndex = 9;
@@ -168,7 +169,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(450, 379);
+            this.label9.Location = new System.Drawing.Point(450, 369);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 17);
             this.label9.TabIndex = 10;
@@ -177,7 +178,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(70, 446);
+            this.label10.Location = new System.Drawing.Point(70, 499);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 11;
@@ -186,7 +187,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(70, 513);
+            this.label11.Location = new System.Drawing.Point(70, 564);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(136, 17);
             this.label11.TabIndex = 12;
@@ -195,7 +196,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(450, 513);
+            this.label12.Location = new System.Drawing.Point(450, 564);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 17);
             this.label12.TabIndex = 13;
@@ -204,7 +205,7 @@
             // tbFullname
             // 
             this.tbFullname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Full Name", true));
-            this.tbFullname.Location = new System.Drawing.Point(226, 108);
+            this.tbFullname.Location = new System.Drawing.Point(226, 104);
             this.tbFullname.Name = "tbFullname";
             this.tbFullname.Size = new System.Drawing.Size(554, 22);
             this.tbFullname.TabIndex = 14;
@@ -212,7 +213,7 @@
             // tbResident
             // 
             this.tbResident.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Resident Telephone", true));
-            this.tbResident.Location = new System.Drawing.Point(226, 508);
+            this.tbResident.Location = new System.Drawing.Point(222, 561);
             this.tbResident.Name = "tbResident";
             this.tbResident.Size = new System.Drawing.Size(199, 22);
             this.tbResident.TabIndex = 15;
@@ -220,7 +221,7 @@
             // tbPosition
             // 
             this.tbPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Position", true));
-            this.tbPosition.Location = new System.Drawing.Point(558, 374);
+            this.tbPosition.Location = new System.Drawing.Point(558, 366);
             this.tbPosition.Name = "tbPosition";
             this.tbPosition.Size = new System.Drawing.Size(222, 22);
             this.tbPosition.TabIndex = 16;
@@ -228,7 +229,7 @@
             // tbFname
             // 
             this.tbFname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "First Name", true));
-            this.tbFname.Location = new System.Drawing.Point(226, 173);
+            this.tbFname.Location = new System.Drawing.Point(226, 169);
             this.tbFname.Name = "tbFname";
             this.tbFname.Size = new System.Drawing.Size(199, 22);
             this.tbFname.TabIndex = 17;
@@ -244,7 +245,7 @@
             // tbAddress
             // 
             this.tbAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Address", true));
-            this.tbAddress.Location = new System.Drawing.Point(226, 224);
+            this.tbAddress.Location = new System.Drawing.Point(226, 227);
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(554, 38);
@@ -253,26 +254,10 @@
             // tbDept
             // 
             this.tbDept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Department", true));
-            this.tbDept.Location = new System.Drawing.Point(226, 374);
+            this.tbDept.Location = new System.Drawing.Point(226, 366);
             this.tbDept.Name = "tbDept";
             this.tbDept.Size = new System.Drawing.Size(203, 22);
             this.tbDept.TabIndex = 20;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Date of Birth", true));
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 312);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 22);
-            this.dateTimePicker1.TabIndex = 21;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Hire Date", true));
-            this.dateTimePicker2.Location = new System.Drawing.Point(226, 441);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(203, 22);
-            this.dateTimePicker2.TabIndex = 22;
             // 
             // cbGender
             // 
@@ -281,7 +266,7 @@
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.Location = new System.Drawing.Point(558, 312);
+            this.cbGender.Location = new System.Drawing.Point(558, 301);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(222, 24);
             this.cbGender.TabIndex = 23;
@@ -289,16 +274,75 @@
             // tbMobile
             // 
             this.tbMobile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Mobile Number", true));
-            this.tbMobile.Location = new System.Drawing.Point(558, 508);
+            this.tbMobile.Location = new System.Drawing.Point(558, 561);
             this.tbMobile.Name = "tbMobile";
             this.tbMobile.Size = new System.Drawing.Size(222, 22);
             this.tbMobile.TabIndex = 24;
+            // 
+            // employeedataTableAdapter
+            // 
+            this.employeedataTableAdapter.ClearBeforeFill = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(73, 434);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 17);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Email", true));
+            this.tbEmail.Location = new System.Drawing.Point(226, 429);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(203, 22);
+            this.tbEmail.TabIndex = 26;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Hire Date", true));
+            this.dateTimePicker2.Location = new System.Drawing.Point(222, 494);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(203, 22);
+            this.dateTimePicker2.TabIndex = 22;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeedataBindingSource, "Date of Birth", true));
+            this.dateTimePicker1.Location = new System.Drawing.Point(226, 299);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(203, 22);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(635, 652);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 46);
+            this.btnCancel.TabIndex = 27;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(546, 652);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 46);
+            this.btnSave.TabIndex = 28;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 710);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.tbMobile);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.dateTimePicker2);
@@ -323,6 +367,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbId);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnClose);
             this.Name = "AddEmployee";
             this.Text = "AddEmployee";
@@ -360,9 +406,13 @@
         private System.Windows.Forms.TextBox tbLname;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.TextBox tbDept;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.TextBox tbMobile;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

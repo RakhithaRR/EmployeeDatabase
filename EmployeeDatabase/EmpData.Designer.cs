@@ -571,23 +571,18 @@ namespace EmployeeDatabase {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
-                this.columnFull_Name.AllowDBNull = false;
                 this.columnFull_Name.MaxLength = 200;
-                this.columnFirst_Name.AllowDBNull = false;
                 this.columnFirst_Name.MaxLength = 45;
-                this.columnLast_Name.AllowDBNull = false;
                 this.columnLast_Name.MaxLength = 45;
                 this.columnAddress.MaxLength = 200;
                 this.columnDepartment.MaxLength = 45;
                 this.columnPosition.MaxLength = 75;
-                this.columnGender.AllowDBNull = false;
                 this.columnGender.MaxLength = 6;
                 this.columnEmail.MaxLength = 50;
-                this.columnHire_Date.AllowDBNull = false;
+                this.CaseSensitive = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -743,7 +738,12 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Full_Name {
                 get {
-                    return ((string)(this[this.tableemployeedata.Full_NameColumn]));
+                    try {
+                        return ((string)(this[this.tableemployeedata.Full_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Full Name\' in table \'employeedata\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployeedata.Full_NameColumn] = value;
@@ -754,7 +754,12 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string First_Name {
                 get {
-                    return ((string)(this[this.tableemployeedata.First_NameColumn]));
+                    try {
+                        return ((string)(this[this.tableemployeedata.First_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'First Name\' in table \'employeedata\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployeedata.First_NameColumn] = value;
@@ -765,7 +770,12 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Last_Name {
                 get {
-                    return ((string)(this[this.tableemployeedata.Last_NameColumn]));
+                    try {
+                        return ((string)(this[this.tableemployeedata.Last_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last Name\' in table \'employeedata\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployeedata.Last_NameColumn] = value;
@@ -840,7 +850,12 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Gender {
                 get {
-                    return ((string)(this[this.tableemployeedata.GenderColumn]));
+                    try {
+                        return ((string)(this[this.tableemployeedata.GenderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'employeedata\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployeedata.GenderColumn] = value;
@@ -867,7 +882,12 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime Hire_Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableemployeedata.Hire_DateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableemployeedata.Hire_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hire Date\' in table \'employeedata\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableemployeedata.Hire_DateColumn] = value;
@@ -904,6 +924,42 @@ namespace EmployeeDatabase {
                 set {
                     this[this.tableemployeedata.Mobile_NumberColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFull_NameNull() {
+                return this.IsNull(this.tableemployeedata.Full_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFull_NameNull() {
+                this[this.tableemployeedata.Full_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFirst_NameNull() {
+                return this.IsNull(this.tableemployeedata.First_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFirst_NameNull() {
+                this[this.tableemployeedata.First_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLast_NameNull() {
+                return this.IsNull(this.tableemployeedata.Last_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLast_NameNull() {
+                this[this.tableemployeedata.Last_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -956,6 +1012,18 @@ namespace EmployeeDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGenderNull() {
+                return this.IsNull(this.tableemployeedata.GenderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGenderNull() {
+                this[this.tableemployeedata.GenderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEmailNull() {
                 return this.IsNull(this.tableemployeedata.EmailColumn);
             }
@@ -964,6 +1032,18 @@ namespace EmployeeDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEmailNull() {
                 this[this.tableemployeedata.EmailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHire_DateNull() {
+                return this.IsNull(this.tableemployeedata.Hire_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHire_DateNull() {
+                this[this.tableemployeedata.Hire_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1756,22 +1836,22 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p2, string p3, string p4, string p6, global::System.Nullable<global::System.DateTime> p8, string p10, string p12, string p13, string p15, System.DateTime p16, global::System.Nullable<int> p18, global::System.Nullable<int> p20) {
+        public virtual int Delete(int p1, string p2, string p3, string p4, string p6, global::System.Nullable<global::System.DateTime> p8, string p10, string p12, string p13, string p15, global::System.Nullable<global::System.DateTime> p16, global::System.Nullable<int> p18, global::System.Nullable<int> p20) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
             if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
             }
             if ((p4 == null)) {
-                throw new global::System.ArgumentNullException("p4");
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
@@ -1809,7 +1889,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(p12));
             }
             if ((p13 == null)) {
-                throw new global::System.ArgumentNullException("p13");
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(p13));
@@ -1822,7 +1902,12 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(p15));
             }
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(p16));
+            if ((p16.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(p16.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
             if ((p18.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(p18.Value));
@@ -1859,21 +1944,21 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, string p3, string p4, global::System.Nullable<global::System.DateTime> p5, string p6, string p7, string p8, string p9, System.DateTime p10, global::System.Nullable<int> p11, global::System.Nullable<int> p12) {
+        public virtual int Insert(string p1, string p2, string p3, string p4, global::System.Nullable<global::System.DateTime> p5, string p6, string p7, string p8, string p9, global::System.Nullable<global::System.DateTime> p10, global::System.Nullable<int> p11, global::System.Nullable<int> p12) {
             if ((p1 == null)) {
-                throw new global::System.ArgumentNullException("p1");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
             }
             if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
@@ -1903,7 +1988,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p7));
             }
             if ((p8 == null)) {
-                throw new global::System.ArgumentNullException("p8");
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p8));
@@ -1914,7 +1999,12 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(p9));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(p10));
+            if ((p10.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(p10.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             if ((p11.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((int)(p11.Value));
             }
@@ -1957,7 +2047,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                     string p7, 
                     string p8, 
                     string p9, 
-                    System.DateTime p10, 
+                    global::System.Nullable<global::System.DateTime> p10, 
                     global::System.Nullable<int> p11, 
                     global::System.Nullable<int> p12, 
                     int p13, 
@@ -1970,23 +2060,23 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                     string p24, 
                     string p25, 
                     string p27, 
-                    System.DateTime p28, 
+                    global::System.Nullable<global::System.DateTime> p28, 
                     global::System.Nullable<int> p30, 
                     global::System.Nullable<int> p32) {
             if ((p1 == null)) {
-                throw new global::System.ArgumentNullException("p1");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
             if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
             if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
@@ -2016,7 +2106,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
             }
             if ((p8 == null)) {
-                throw new global::System.ArgumentNullException("p8");
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(p8));
@@ -2027,7 +2117,12 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(p9));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10));
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             if ((p11.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11.Value));
             }
@@ -2042,19 +2137,19 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
             }
             this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
             if ((p14 == null)) {
-                throw new global::System.ArgumentNullException("p14");
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
             }
             if ((p15 == null)) {
-                throw new global::System.ArgumentNullException("p15");
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
             }
             if ((p16 == null)) {
-                throw new global::System.ArgumentNullException("p16");
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
@@ -2092,7 +2187,7 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
             }
             if ((p25 == null)) {
-                throw new global::System.ArgumentNullException("p25");
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
@@ -2105,7 +2200,12 @@ namespace EmployeeDatabase.EmpDataTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(p27));
             }
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(p28));
+            if ((p28.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(p28.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
             if ((p30.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(p30.Value));

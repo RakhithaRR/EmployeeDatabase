@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployee));
             this.btnClose = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
-            this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empData = new EmployeeDatabase.EmpData();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +53,6 @@
             this.tbDept = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.tbMobile = new System.Windows.Forms.TextBox();
-            this.employeedataTableAdapter = new EmployeeDatabase.EmpDataTableAdapters.employeedataTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.dtHire = new System.Windows.Forms.DateTimePicker();
@@ -63,12 +60,16 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empData = new EmployeeDatabase.EmpData();
+            this.employeedataTableAdapter = new EmployeeDatabase.EmpDataTableAdapters.employeedataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeedataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empData)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Location = new System.Drawing.Point(723, 652);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(76, 46);
@@ -84,17 +85,7 @@
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(100, 22);
-            this.tbId.TabIndex = 1;
-            // 
-            // employeedataBindingSource
-            // 
-            this.employeedataBindingSource.DataMember = "employeedata";
-            this.employeedataBindingSource.DataSource = this.empData;
-            // 
-            // empData
-            // 
-            this.empData.DataSetName = "EmpData";
-            this.empData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tbId.TabIndex = 0;
             // 
             // label1
             // 
@@ -210,7 +201,7 @@
             this.tbFullname.Location = new System.Drawing.Point(226, 104);
             this.tbFullname.Name = "tbFullname";
             this.tbFullname.Size = new System.Drawing.Size(554, 22);
-            this.tbFullname.TabIndex = 14;
+            this.tbFullname.TabIndex = 1;
             // 
             // tbResident
             // 
@@ -218,7 +209,7 @@
             this.tbResident.Location = new System.Drawing.Point(222, 561);
             this.tbResident.Name = "tbResident";
             this.tbResident.Size = new System.Drawing.Size(199, 22);
-            this.tbResident.TabIndex = 15;
+            this.tbResident.TabIndex = 11;
             // 
             // tbPosition
             // 
@@ -226,7 +217,7 @@
             this.tbPosition.Location = new System.Drawing.Point(558, 366);
             this.tbPosition.Name = "tbPosition";
             this.tbPosition.Size = new System.Drawing.Size(222, 22);
-            this.tbPosition.TabIndex = 16;
+            this.tbPosition.TabIndex = 8;
             // 
             // tbFname
             // 
@@ -234,7 +225,7 @@
             this.tbFname.Location = new System.Drawing.Point(226, 169);
             this.tbFname.Name = "tbFname";
             this.tbFname.Size = new System.Drawing.Size(199, 22);
-            this.tbFname.TabIndex = 17;
+            this.tbFname.TabIndex = 2;
             // 
             // tbLname
             // 
@@ -242,7 +233,7 @@
             this.tbLname.Location = new System.Drawing.Point(558, 175);
             this.tbLname.Name = "tbLname";
             this.tbLname.Size = new System.Drawing.Size(222, 22);
-            this.tbLname.TabIndex = 18;
+            this.tbLname.TabIndex = 3;
             // 
             // tbAddress
             // 
@@ -251,7 +242,7 @@
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(554, 38);
-            this.tbAddress.TabIndex = 19;
+            this.tbAddress.TabIndex = 4;
             // 
             // tbDept
             // 
@@ -259,7 +250,7 @@
             this.tbDept.Location = new System.Drawing.Point(226, 366);
             this.tbDept.Name = "tbDept";
             this.tbDept.Size = new System.Drawing.Size(203, 22);
-            this.tbDept.TabIndex = 20;
+            this.tbDept.TabIndex = 7;
             // 
             // cbGender
             // 
@@ -271,7 +262,7 @@
             this.cbGender.Location = new System.Drawing.Point(558, 301);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(222, 24);
-            this.cbGender.TabIndex = 23;
+            this.cbGender.TabIndex = 6;
             // 
             // tbMobile
             // 
@@ -279,11 +270,7 @@
             this.tbMobile.Location = new System.Drawing.Point(558, 561);
             this.tbMobile.Name = "tbMobile";
             this.tbMobile.Size = new System.Drawing.Size(222, 22);
-            this.tbMobile.TabIndex = 24;
-            // 
-            // employeedataTableAdapter
-            // 
-            this.employeedataTableAdapter.ClearBeforeFill = true;
+            this.tbMobile.TabIndex = 12;
             // 
             // label13
             // 
@@ -300,7 +287,7 @@
             this.tbEmail.Location = new System.Drawing.Point(226, 429);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(203, 22);
-            this.tbEmail.TabIndex = 26;
+            this.tbEmail.TabIndex = 9;
             // 
             // dtHire
             // 
@@ -308,7 +295,7 @@
             this.dtHire.Location = new System.Drawing.Point(222, 494);
             this.dtHire.Name = "dtHire";
             this.dtHire.Size = new System.Drawing.Size(203, 22);
-            this.dtHire.TabIndex = 22;
+            this.dtHire.TabIndex = 10;
             // 
             // dtDob
             // 
@@ -316,10 +303,11 @@
             this.dtDob.Location = new System.Drawing.Point(226, 299);
             this.dtDob.Name = "dtDob";
             this.dtDob.Size = new System.Drawing.Size(203, 22);
-            this.dtDob.TabIndex = 21;
+            this.dtDob.TabIndex = 5;
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.Location = new System.Drawing.Point(632, 652);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 46);
@@ -330,6 +318,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Location = new System.Drawing.Point(541, 652);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(76, 46);
@@ -340,6 +329,7 @@
             // 
             // btnNew
             // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNew.Location = new System.Drawing.Point(450, 652);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(76, 46);
@@ -347,6 +337,20 @@
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // employeedataBindingSource
+            // 
+            this.employeedataBindingSource.DataMember = "employeedata";
+            this.employeedataBindingSource.DataSource = this.empData;
+            // 
+            // empData
+            // 
+            this.empData.DataSetName = "EmpData";
+            this.empData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeedataTableAdapter
+            // 
+            this.employeedataTableAdapter.ClearBeforeFill = true;
             // 
             // AddEmployee
             // 

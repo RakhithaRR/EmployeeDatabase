@@ -570,14 +570,18 @@ namespace EmployeeDatabase {
                 base.Columns.Add(this.columnMobile_Number);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnFull_Name}, false));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnFull_Name.Unique = true;
                 this.columnFull_Name.MaxLength = 200;
                 this.columnFirst_Name.MaxLength = 45;
                 this.columnLast_Name.MaxLength = 45;
                 this.columnAddress.MaxLength = 200;
+                this.columnDepartment.DefaultValue = ((string)(""));
                 this.columnDepartment.MaxLength = 45;
                 this.columnPosition.MaxLength = 75;
                 this.columnGender.MaxLength = 6;

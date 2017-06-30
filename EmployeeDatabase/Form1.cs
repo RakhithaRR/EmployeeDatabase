@@ -15,6 +15,7 @@ namespace EmployeeDatabase
         Form addNew = new AddEmployee();
         Form aboutNew = new AboutBox();
         Form viewNew = new ViewDatabase();
+        Form searchNew = new Search();
         public MainForm()
         {
             InitializeComponent();
@@ -43,6 +44,11 @@ namespace EmployeeDatabase
         private void btnView_Click(object sender, EventArgs e)
         {
             viewNew.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            searchNew.ShowDialog();
         }
     }
 }

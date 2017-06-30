@@ -25,11 +25,13 @@ namespace EmployeeDatabase
             this.employeedataTableAdapter.Fill(this.empData.employeedata);
             employeedataBindingSource.DataSource = this.empData.employeedata;
             DefaultFormSettings(false);
+            btnNew.Enabled = true;
             
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            btnNew.Enabled = true;
             this.Close();
         }
 
@@ -40,6 +42,7 @@ namespace EmployeeDatabase
                 employeedataBindingSource.EndEdit();
                 employeedataTableAdapter.Update(this.empData.employeedata);
                 DefaultFormSettings(false);
+                btnNew.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -60,12 +63,13 @@ namespace EmployeeDatabase
             tbFullname.Focus();
             this.empData.employeedata.AddemployeedataRow(this.empData.employeedata.NewemployeedataRow());
             employeedataBindingSource.MoveLast();
+            btnNew.Enabled = false;
             
         }
 
         private void DefaultFormSettings(bool value)
         {
-            Control[] ctr = { tbFullname, tbFname, tbLname, tbPosition, tbResident, tbEmail, tbDept, tbAddress, cbGender, dtDob, dtHire };
+            Control[] ctr = { tbFullname, tbFname, tbLname, tbPosition, tbResident, tbEmail, tbDept, tbAddress,tbMobile, cbGender, dtDob, dtHire };
             foreach (Control c in ctr)
             {
                 c.ResetText();

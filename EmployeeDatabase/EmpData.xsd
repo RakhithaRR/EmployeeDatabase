@@ -161,7 +161,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Date_x0020_of_x0020_Birth" msprop:Generator_ColumnVarNameInTable="columnDate_of_Birth" msprop:Generator_ColumnPropNameInRow="Date_of_Birth" msprop:Generator_ColumnPropNameInTable="Date_of_BirthColumn" msprop:Generator_UserColumnName="Date of Birth" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+              <xs:element name="Department" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="45" />
@@ -200,6 +200,10 @@
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:employeedata" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:employeedata" />
+      <xs:field xpath="mstns:Full_x0020_Name" />
     </xs:unique>
   </xs:element>
 </xs:schema>
